@@ -59,18 +59,28 @@ The --mode link will create links instead of copying file
 Get the astrometry
 ------------------
 
-The coordinate of the cluster are (RA, DEC) = (212.8355, 52.20277) in
-degree. They also come from CADC.
+A script available at CC-IN2P3 will help you get the needed astrometry
+files using as input the list of calibrated data downloaded in the first
+step (cadcUrlList.txt). It is for now stored under
 
-At the moment the most complete catalog available is based on SDSS DR9
-and is available at IN2P3 in:
+::
+
+        /sps/lsst/dev/nchotard/scripts/get_astrometry.py
+        
+
+but will soon ne uploaded on github. Here is in some details what the
+script does.
+
+The coordinate of the cluster are (RA, DEC) = (212.8355, 52.20277) in
+degree. They also come from CADC. At the moment the most complete
+catalog available is based on SDSS DR9 and is available at IN2P3 in:
 
 ::
 
         /sps/lsst/data/astrometry_net_data/sdss-dr9 (1440 files)
 
-To get the specific files that you have to downlead, use the following
-command line:
+To get the specific files that you need for the cluster analysis, you
+will use
 
 ::
 
@@ -88,4 +98,7 @@ Which will return
         Healpix center is (212.14286, 48.141208) degrees
         Healpix is bounded by RA=[205.714, 218.571], Dec=[41.8103, 54.3409] degrees.
         Healpix scale is 26384.5 arcsec.
+
+This output give you the file number that you need to get (Healpix=157).
+Since each
 

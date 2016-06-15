@@ -195,15 +195,22 @@ ingestImages.py input CalibratedData/*.fz --mode link
 </div>
 <div class="section" id="get-the-astrometry">
 <h2>Get the astrometry<a class="headerlink" href="#get-the-astrometry" title="Permalink to this headline">¶</a></h2>
+<p>A script available at CC-IN2P3 will help you get the needed astrometry
+files using as input the list of calibrated data downloaded in the first
+step (cadcUrlList.txt). It is for now stored under</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>/sps/lsst/dev/nchotard/scripts/get_astrometry.py
+</pre></div>
+</div>
+<p>but will soon ne uploaded on github. Here is in some details what the
+script does.</p>
 <p>The coordinate of the cluster are (RA, DEC) = (212.8355, 52.20277) in
-degree. They also come from CADC.</p>
-<p>At the moment the most complete catalog available is based on SDSS DR9
-and is available at IN2P3 in:</p>
+degree. They also come from CADC. At the moment the most complete
+catalog available is based on SDSS DR9 and is available at IN2P3 in:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span>/sps/lsst/data/astrometry_net_data/sdss-dr9 (1440 files)
 </pre></div>
 </div>
-<p>To get the specific files that you have to downlead, use the following
-command line:</p>
+<p>To get the specific files that you need for the cluster analysis, you
+will use</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span>get-healpix -N8 212.8355 -- 52.20277  # &quot;--&quot; is optional in this case but mandatory for a negative declination value
 </pre></div>
 </div>
@@ -217,6 +224,8 @@ Healpix is bounded by RA=[205.714, 218.571], Dec=[41.8103, 54.3409] degrees.
 Healpix scale is 26384.5 arcsec.
 </pre></div>
 </div>
+<p>This output give you the file number that you need to get (Healpix=157).
+Since each</p>
 </div>
 </div>
 
@@ -240,7 +249,7 @@ Healpix scale is 26384.5 arcsec.
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016, N. Chotard.
-      Last updated on Jun 13, 2016.
+      Last updated on Jun 15, 2016.
 
     </p>
   </div>
