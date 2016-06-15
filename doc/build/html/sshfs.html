@@ -1,0 +1,267 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Mount sps or afs (or any other disks) &mdash; LSST Doc</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="LSST Doc" href="index.html"/>
+        <link rel="next" title="Some examples" href="Tests.html"/>
+        <link rel="prev" title="Generality" href="Clusters.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> LSST
+          
+
+          
+            
+            <img src="_static/lsst_trans.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="3C295.html">Cluster 3C295</a></li>
+<li class="toctree-l1"><a class="reference internal" href="WeakLensing.html">Generality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="WeakLensing.html#in-lsst">In LSST</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Clusters.html">Generality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Clusters.html#in-lsst">In LSST</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">Mount sps or afs (or any other disks)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#install-sshfs">Install sshfs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-directories">Create directories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mount-unmount-the-disk">Mount/unmount the disk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-aliases">Create aliases</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Tests.html">Some examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Links.html">Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="About.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TODO.html">Todo</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">LSST</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Mount sps or afs (or any other disks)</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/sshfs.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="mount-sps-or-afs-or-any-other-disks">
+<h1>Mount sps or afs (or any other disks)<a class="headerlink" href="#mount-sps-or-afs-or-any-other-disks" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="install-sshfs">
+<h2>Install sshfs<a class="headerlink" href="#install-sshfs" title="Permalink to this headline">¶</a></h2>
+<p>Using apt-get, or yum, or dnf, you must install sshfs and fuse-sshfs.</p>
+</div>
+<div class="section" id="create-directories">
+<h2>Create directories<a class="headerlink" href="#create-directories" title="Permalink to this headline">¶</a></h2>
+<p>Create an empty directory in your home (or anywhere with the appropriate
+rights</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>mkdir ~/sps
+</pre></div>
+</div>
+<p>Then you have to create a symbolic link in the root diretory pointing to
+the previoulsy create directory. You will then be able to use /sps or
+any other absolute path that you had at CC on you personnal computer.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>cd /
+ln -s /home/yourname/sps sps
+</pre></div>
+</div>
+</div>
+<div class="section" id="mount-unmount-the-disk">
+<h2>Mount/unmount the disk<a class="headerlink" href="#mount-unmount-the-disk" title="Permalink to this headline">¶</a></h2>
+<p>You are now ready to work on your computer with your own soft bu with a
+full access to the CC disks. To do so, mount /sps (or afs) the following
+way:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>sshfs yourname@ccage.in2p3.fr:/sps ~/sps
+</pre></div>
+</div>
+<p>Check that the disk is mounted</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">/</span><span class="n">sps</span>
+</pre></div>
+</div>
+<p>This should give you the same output as if you were at CC. To unmount
+the disk, use</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>fusermount -u ~/sps
+</pre></div>
+</div>
+<p>The same <tt class="docutils literal"><span class="pre">ls</span></tt> should give you an empty output.</p>
+</div>
+<div class="section" id="create-aliases">
+<h2>Create aliases<a class="headerlink" href="#create-aliases" title="Permalink to this headline">¶</a></h2>
+<p>In your .bashrc (cshrc, or anything that you load while opening your
+terminal), added the following lines to mount/unmout the disks:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>alias msps=&quot;sshfs yourname@ccage.in2p3.fr:/sps ~/sps&quot;
+alias usps=&quot;fusermount -u ~/sps&quot;
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Tests.html" class="btn btn-neutral float-right" title="Some examples" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Clusters.html" class="btn btn-neutral" title="Generality" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, N. Chotard.
+      Last updated on Jun 13, 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

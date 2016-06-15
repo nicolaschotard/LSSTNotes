@@ -1,0 +1,247 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Generality &mdash; LSST Doc</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="LSST Doc" href="index.html"/>
+        <link rel="next" title="Mount sps or afs (or any other disks)" href="sshfs.html"/>
+        <link rel="prev" title="Generality" href="WeakLensing.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> LSST
+          
+
+          
+            
+            <img src="_static/lsst_trans.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="3C295.html">Cluster 3C295</a></li>
+<li class="toctree-l1"><a class="reference internal" href="WeakLensing.html">Generality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="WeakLensing.html#in-lsst">In LSST</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Generality</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#get-a-cluster-data">Get a cluster data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#in-lsst">In LSST</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="sshfs.html">Mount sps or afs (or any other disks)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tests.html">Some examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Links.html">Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="About.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TODO.html">Todo</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">LSST</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Generality</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/Clusters.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="generality">
+<h1>Generality<a class="headerlink" href="#generality" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="get-a-cluster-data">
+<h2>Get a cluster data<a class="headerlink" href="#get-a-cluster-data" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Go online to</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>http://www2.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/search/?collection=CFHT&amp;noexec=true#queryFormTab
+</pre></div>
+</div>
+</li>
+<li><p class="first">Select your target in <tt class="docutils literal"><span class="pre">Spatial</span> <span class="pre">Constraints</span> <span class="pre">-&gt;</span> <span class="pre">Target</span></tt>, and then,
+select below using the following criteria:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>Optical -&gt; CFHT -&gt; MegaPrime -&gt; All -&gt; Calibrated -&gt; Image -&gt; Object
+</pre></div>
+</div>
+</li>
+<li><p class="first">Click on the <tt class="docutils literal"><span class="pre">Search</span></tt> buttn. Make sure all exposure have an
+integration time of at least 200s (<tt class="docutils literal"><span class="pre">Int</span> <span class="pre">Time</span></tt> -&gt; <tt class="docutils literal"><span class="pre">&gt;200</span></tt>), and the
+calibration is 2 (<tt class="docutils literal"><span class="pre">Cal.</span> <span class="pre">Lev</span></tt>). <tt class="docutils literal"><span class="pre">Mark</span></tt> them all using the button
+at the top of the list, and click on <tt class="docutils literal"><span class="pre">Download</span></tt>.</p>
+</li>
+<li><p class="first">Click on <tt class="docutils literal"><span class="pre">URLS</span> <span class="pre">list</span> <span class="pre">in</span> <span class="pre">a</span> <span class="pre">file</span></tt>, download the list</p>
+</li>
+<li><p class="first">Go to your terminal, and launch
+<tt class="docutils literal"><span class="pre">wget</span> <span class="pre">--content-disposition</span> <span class="pre">-i</span> <span class="pre">FILE_NAME</span></tt> (see the webpage for
+details).</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="in-lsst">
+<h1>In LSST<a class="headerlink" href="#in-lsst" title="Permalink to this headline">¶</a></h1>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="sshfs.html" class="btn btn-neutral float-right" title="Mount sps or afs (or any other disks)" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="WeakLensing.html" class="btn btn-neutral" title="Generality" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, N. Chotard.
+      Last updated on Jun 13, 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

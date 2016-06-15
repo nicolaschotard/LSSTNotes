@@ -1,0 +1,63 @@
+
+Pipeline limitations
+====================
+
+Things that make it more complex than running a dozen commands in
+sequence.
+
+What needs to be checked
+------------------------
+
+Manual checks
+~~~~~~~~~~~~~
+
+Failure modes
+-------------
+
+Assumptions or restrictions
+---------------------------
+
+Computing resources and limitations
+-----------------------------------
+
+-  http://cctools.in2p3.fr/mrtguser/info\_manips\_detail.php?group=snovae
+
+-  https://ccspsmon.in2p3.fr/
+-  https://ccspsmon.in2p3.fr/users/snovae.html
+-  https://ccspsmon.in2p3.fr/dush/snovae.html
+-  https://ccspsmon.in2p3.fr/fi/?s=snovae&t=yearly&m=all
+
+-  `2014 CC repport <figures/rapport_snovae.pdf>`__
+-  Monthly repport
+   (`2014-9 <figures/RapportMensuel_snovae_2014-9.pdf>`__)
+
+Disk space
+~~~~~~~~~~
+
+Computing resources
+~~~~~~~~~~~~~~~~~~~
+
+Most fragile parts of the pipeline
+----------------------------------
+
+Dependencies
+------------
+
+Non-standard dependancies
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Standard dependancies
+~~~~~~~~~~~~~~~~~~~~~
+
+Documentation updates
+---------------------
+
+-  `NewDataProcessing <https://snf-doc.lbl.gov/twiki/bin/view/Tasks/NewDataProcessing#I_Flux_calibration>`__
+-  `SnifsPipelineHowTo <https://snf-doc.lbl.gov/twiki/bin/view/Offline/SnifsPipelineHowTo>`__
+-  `DataAccess <https://snf-doc.lbl.gov/twiki/bin/view/Offline/DataAccess>`__
+-  `ProductionCodeInstall <https://snf-doc.lbl.gov/twiki/bin/view/Offline/ProductionCodeInstall>`__
+-  `SnifsPipelineUserGuide <https://snf-doc.lbl.gov/twiki/bin/view/Top/SnifsPipelineUserGuide>`__
+-  `Snf process
+   pdf <https://snf-doc.lbl.gov/twiki/pub/Offline/DataAccessOverview/snf_process.pdf>`__
+   We should discuss what updates are needed to these - or new, more
+   consolidated - instructions

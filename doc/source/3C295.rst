@@ -1,0 +1,91 @@
+
+Cluster 3C295
+=============
+
+Get the data
+------------
+
+-  Go online to
+
+   ::
+
+       http://www2.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/search/?collection=CFHT&noexec=true#queryFormTab
+
+-  Select your target in ``Spatial Constraints -> Target`` (put 3C295),
+   and then, select below using the following criteria:
+
+   ::
+
+       Optical -> CFHT -> MegaPrime -> All -> Calibrated -> Image -> Object
+
+-  Click on the ``Search`` buttn. Make sure all exposure have an
+   integration time of at least 200s (``Int Time`` -> ``>200``), and the
+   calibration is 2 (``Cal. Lev``). ``Mark`` them all using the button
+   at the top of the list, and click on ``Download``.
+
+-  Click on ``URLS list in a file``, download the list
+
+-  Go to your terminal, and launch
+   ``wget --content-disposition -i FILE_NAME`` (see the webpage for
+   details) in the directory you want to get the file you just
+   downloaded.
+
+   ::
+
+       cd WORKDIR/3C295
+       mkdir CalibratedData
+       cd CalibratedData
+       mv ~/Download/cadcUrlList.txt .
+       wget --content-disposition -i cadcUrlList.txt
+
+-  Depending on your connection, this could take a little wile
+   (300-400MB / file, ~100 files)
+
+Re-organize the data
+--------------------
+
+We first need to re-organize the data to get a directory with a
+structure compatible with the LSST stack.
+
+::
+
+        setup pipe_task
+        setup obs_cfht -t chotard
+        ingestImages.py input CalibratedData/*.fz --mode link
+        
+
+The --mode link will create links instead of copying file
+
+Get the astrometry
+------------------
+
+The coordinate of the cluster are (RA, DEC) = (212.8355, 52.20277) in
+degree. They also come from CADC.
+
+At the moment the most complete catalog available is based on SDSS DR9
+and is available at IN2P3 in:
+
+::
+
+        /sps/lsst/data/astrometry_net_data/sdss-dr9 (1440 files)
+
+To get the specific files that you have to downlead, use the following
+command line:
+
+::
+
+        get-healpix -N8 212.8355 -- 52.20277  # "--" is optional in this case but mandatory for a negative declination value
+        
+
+Which will return
+
+::
+
+        (RA, DEC) = (212.835, 52.2028) degrees
+        Healpix=157 in the XY scheme (bighp=2, x=3, y=5)
+          healpix=100 in the RING scheme (ringnum=7, longind=16)
+          healpix=167 in the NESTED scheme.
+        Healpix center is (212.14286, 48.141208) degrees
+        Healpix is bounded by RA=[205.714, 218.571], Dec=[41.8103, 54.3409] degrees.
+        Healpix scale is 26384.5 arcsec.
+
