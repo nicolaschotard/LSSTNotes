@@ -1,3 +1,4 @@
-# SNfactory documentation
-Source of the general documentation on the SNfactory data-processing pipeline and database that can be found [here](http://snovae.in2p3.fr/snprod/doc/).
+# Note on the LSST stack
+
+Some notes on how to process data using the LSST stask, along with a few random things.
 
