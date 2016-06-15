@@ -6,6 +6,8 @@
 LSST/Desc analyses and info
 ===========================
 
+Some notes on LSST/DESC analyses.
+
 .. toctree::
    :maxdepth: 2
    :caption: Analysis
