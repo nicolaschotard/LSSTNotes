@@ -1,6 +1,6 @@
 
-Cluster 3C295
-=============
+3C295
+=====
 
 Get the data
 ------------
@@ -101,4 +101,3 @@ Which will return
 
 This output give you the file number that you need to get (Healpix=157).
 Since each
-

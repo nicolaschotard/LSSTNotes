@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Todo &mdash; LSST Doc</title>
+  <title>General analysis workflow &mdash; LSST Doc</title>
   
 
   
@@ -30,7 +30,9 @@
   
 
   
-    <link rel="top" title="LSST Doc" href="index.html"/> 
+    <link rel="top" title="LSST Doc" href="index.html"/>
+        <link rel="next" title="3C295" href="3C295.html"/>
+        <link rel="prev" title="Weak lensing" href="WeakLensing.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -79,10 +81,10 @@
             
             
                 <p class="caption"><span class="caption-text">Analysis</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Clusters.html">Clusters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="WeakLensing.html">Weak lensing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Workflow.html">General analysis workflow</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">General analysis workflow</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Individual clusters</span></p>
 <ul>
@@ -124,11 +126,11 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li>Todo</li>
+    <li>General analysis workflow</li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="_sources/TODO.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/Workflow.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -138,14 +140,32 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="todo">
-<h1>Todo<a class="headerlink" href="#todo" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="general-analysis-workflow">
+<h1>General analysis workflow<a class="headerlink" href="#general-analysis-workflow" title="Permalink to this headline">¶</a></h1>
+<p>This page gives an overview of the command/scripts that must be run to
+go from calibrated CFHT data to the cluster photometry estimate.</p>
+<ul class="simple">
+<li>Get the calibrated images from CADT: <code class="docutils literal"><span class="pre">wget</span></code></li>
+<li>Reorganize the data: <code class="docutils literal"><span class="pre">ingestImages.py</span></code></li>
+<li>Get the needed astrometry data: <code class="docutils literal"><span class="pre">get_astromerty.py</span></code></li>
+<li>processCcd.py</li>
+<li>Coadition</li>
+</ul>
 </div>
 
 
            </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="3C295.html" class="btn btn-neutral float-right" title="3C295" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="WeakLensing.html" class="btn btn-neutral" title="Weak lensing" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

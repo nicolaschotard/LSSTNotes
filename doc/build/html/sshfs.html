@@ -31,8 +31,8 @@
 
   
     <link rel="top" title="LSST Doc" href="index.html"/>
-        <link rel="next" title="Some examples" href="Tests.html"/>
-        <link rel="prev" title="Generality" href="Clusters.html"/> 
+        <link rel="next" title="Packages install" href="Install.html"/>
+        <link rel="prev" title="3C295" href="3C295.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -80,25 +80,28 @@
           
             
             
-                <ul>
-<li class="toctree-l1"><a class="reference internal" href="3C295.html">Cluster 3C295</a></li>
-<li class="toctree-l1"><a class="reference internal" href="WeakLensing.html">Generality</a></li>
-<li class="toctree-l1"><a class="reference internal" href="WeakLensing.html#in-lsst">In LSST</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Clusters.html">Generality</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Clusters.html#in-lsst">In LSST</a></li>
+                <p class="caption"><span class="caption-text">Analysis</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Clusters.html">Clusters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="WeakLensing.html">Weak lensing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Workflow.html">General analysis workflow</a></li>
 </ul>
+<p class="caption"><span class="caption-text">Individual clusters</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="3C295.html">3C295</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Various info</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="">Mount sps or afs (or any other disks)</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Mount sps or afs (or any other disks)</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#install-sshfs">Install sshfs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#create-directories">Create directories</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#mount-unmount-the-disk">Mount/unmount the disk</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#create-aliases">Create aliases</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="Install.html">Packages install</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Tests.html">Some examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Links.html">Links</a></li>
-<li class="toctree-l1"><a class="reference internal" href="About.html">About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="TODO.html">Todo</a></li>
 </ul>
 
             
@@ -121,7 +124,7 @@
         <div class="rst-content">
           
 
-
+ 
 
 
 
@@ -153,14 +156,14 @@
 <h2>Create directories<a class="headerlink" href="#create-directories" title="Permalink to this headline">¶</a></h2>
 <p>Create an empty directory in your home (or anywhere with the appropriate
 rights</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>mkdir ~/sps
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="o">~/</span><span class="n">sps</span>
 </pre></div>
 </div>
 <p>Then you have to create a symbolic link in the root diretory pointing to
 the previoulsy create directory. You will then be able to use /sps or
 any other absolute path that you had at CC on you personnal computer.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>cd /
-ln -s /home/yourname/sps sps
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span>
+<span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">yourname</span><span class="o">/</span><span class="n">sps</span> <span class="n">sps</span>
 </pre></div>
 </div>
 </div>
@@ -169,26 +172,26 @@ ln -s /home/yourname/sps sps
 <p>You are now ready to work on your computer with your own soft bu with a
 full access to the CC disks. To do so, mount /sps (or afs) the following
 way:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>sshfs yourname@ccage.in2p3.fr:/sps ~/sps
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sshfs</span> <span class="n">yourname</span><span class="nd">@ccage</span><span class="o">.</span><span class="n">in2p3</span><span class="o">.</span><span class="n">fr</span><span class="p">:</span><span class="o">/</span><span class="n">sps</span> <span class="o">~/</span><span class="n">sps</span>
 </pre></div>
 </div>
 <p>Check that the disk is mounted</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">/</span><span class="n">sps</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">/</span><span class="n">sps</span>
 </pre></div>
 </div>
 <p>This should give you the same output as if you were at CC. To unmount
 the disk, use</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>fusermount -u ~/sps
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">fusermount</span> <span class="o">-</span><span class="n">u</span> <span class="o">~/</span><span class="n">sps</span>
 </pre></div>
 </div>
-<p>The same <tt class="docutils literal"><span class="pre">ls</span></tt> should give you an empty output.</p>
+<p>The same <code class="docutils literal"><span class="pre">ls</span></code> should give you an empty output.</p>
 </div>
 <div class="section" id="create-aliases">
 <h2>Create aliases<a class="headerlink" href="#create-aliases" title="Permalink to this headline">¶</a></h2>
 <p>In your .bashrc (cshrc, or anything that you load while opening your
 terminal), added the following lines to mount/unmout the disks:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>alias msps=&quot;sshfs yourname@ccage.in2p3.fr:/sps ~/sps&quot;
-alias usps=&quot;fusermount -u ~/sps&quot;
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">alias</span> <span class="n">msps</span><span class="o">=</span><span class="s2">&quot;sshfs yourname@ccage.in2p3.fr:/sps ~/sps&quot;</span>
+<span class="n">alias</span> <span class="n">usps</span><span class="o">=</span><span class="s2">&quot;fusermount -u ~/sps&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -201,10 +204,10 @@ alias usps=&quot;fusermount -u ~/sps&quot;
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="Tests.html" class="btn btn-neutral float-right" title="Some examples" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="Install.html" class="btn btn-neutral float-right" title="Packages install" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="Clusters.html" class="btn btn-neutral" title="Generality" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="3C295.html" class="btn btn-neutral" title="3C295" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -245,7 +248,7 @@ alias usps=&quot;fusermount -u ~/sps&quot;
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

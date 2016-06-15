@@ -1,7 +1,9 @@
 
+Weak lensing
+============
+
 Generality
-==========
+----------
 
-In LSST
-=======
-
+Weak lensing analysis in LSST
+-----------------------------

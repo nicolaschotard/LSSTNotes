@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Generality &mdash; LSST Doc</title>
+  <title>Clusters &mdash; LSST Doc</title>
   
 
   
@@ -31,8 +31,8 @@
 
   
     <link rel="top" title="LSST Doc" href="index.html"/>
-        <link rel="next" title="Mount sps or afs (or any other disks)" href="sshfs.html"/>
-        <link rel="prev" title="Generality" href="WeakLensing.html"/> 
+        <link rel="next" title="Weak lensing" href="WeakLensing.html"/>
+        <link rel="prev" title="LSST/Desc analyses and info" href="index.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -80,22 +80,29 @@
           
             
             
-                <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="3C295.html">Cluster 3C295</a></li>
-<li class="toctree-l1"><a class="reference internal" href="WeakLensing.html">Generality</a></li>
-<li class="toctree-l1"><a class="reference internal" href="WeakLensing.html#in-lsst">In LSST</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Generality</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#get-a-cluster-data">Get a cluster data</a></li>
+                <p class="caption"><span class="caption-text">Analysis</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Clusters</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#generality">Generality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cluster-analisys-in-lsst">Cluster analisys in LSST</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#get-a-cluster-data">Get a cluster data</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="#in-lsst">In LSST</a></li>
 </ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="WeakLensing.html">Weak lensing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Workflow.html">General analysis workflow</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Individual clusters</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="3C295.html">3C295</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Various info</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="sshfs.html">Mount sps or afs (or any other disks)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Install.html">Packages install</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Tests.html">Some examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Links.html">Links</a></li>
-<li class="toctree-l1"><a class="reference internal" href="About.html">About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="TODO.html">Todo</a></li>
 </ul>
 
             
@@ -118,7 +125,7 @@
         <div class="rst-content">
           
 
-
+ 
 
 
 
@@ -126,7 +133,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li>Generality</li>
+    <li>Clusters</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -140,38 +147,41 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="generality">
-<h1>Generality<a class="headerlink" href="#generality" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="clusters">
+<h1>Clusters<a class="headerlink" href="#clusters" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="generality">
+<h2>Generality<a class="headerlink" href="#generality" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="cluster-analisys-in-lsst">
+<h2>Cluster analisys in LSST<a class="headerlink" href="#cluster-analisys-in-lsst" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="get-a-cluster-data">
-<h2>Get a cluster data<a class="headerlink" href="#get-a-cluster-data" title="Permalink to this headline">¶</a></h2>
+<h3>Get a cluster data<a class="headerlink" href="#get-a-cluster-data" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p class="first">Go online to</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>http://www2.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/search/?collection=CFHT&amp;noexec=true#queryFormTab
+<div class="highlight-default"><div class="highlight"><pre><span></span>http://www2.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/search/?collection=CFHT&amp;noexec=true#queryFormTab
 </pre></div>
 </div>
 </li>
-<li><p class="first">Select your target in <tt class="docutils literal"><span class="pre">Spatial</span> <span class="pre">Constraints</span> <span class="pre">-&gt;</span> <span class="pre">Target</span></tt>, and then,
+<li><p class="first">Select your target in <code class="docutils literal"><span class="pre">Spatial</span> <span class="pre">Constraints</span> <span class="pre">-&gt;</span> <span class="pre">Target</span></code>, and then,
 select below using the following criteria:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>Optical -&gt; CFHT -&gt; MegaPrime -&gt; All -&gt; Calibrated -&gt; Image -&gt; Object
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Optical</span> <span class="o">-&gt;</span> <span class="n">CFHT</span> <span class="o">-&gt;</span> <span class="n">MegaPrime</span> <span class="o">-&gt;</span> <span class="n">All</span> <span class="o">-&gt;</span> <span class="n">Calibrated</span> <span class="o">-&gt;</span> <span class="n">Image</span> <span class="o">-&gt;</span> <span class="n">Object</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Click on the <tt class="docutils literal"><span class="pre">Search</span></tt> buttn. Make sure all exposure have an
-integration time of at least 200s (<tt class="docutils literal"><span class="pre">Int</span> <span class="pre">Time</span></tt> -&gt; <tt class="docutils literal"><span class="pre">&gt;200</span></tt>), and the
-calibration is 2 (<tt class="docutils literal"><span class="pre">Cal.</span> <span class="pre">Lev</span></tt>). <tt class="docutils literal"><span class="pre">Mark</span></tt> them all using the button
-at the top of the list, and click on <tt class="docutils literal"><span class="pre">Download</span></tt>.</p>
+<li><p class="first">Click on the <code class="docutils literal"><span class="pre">Search</span></code> buttn. Make sure all exposure have an
+integration time of at least 200s (<code class="docutils literal"><span class="pre">Int</span> <span class="pre">Time</span></code> -&gt; <code class="docutils literal"><span class="pre">&gt;200</span></code>), and the
+calibration is 2 (<code class="docutils literal"><span class="pre">Cal.</span> <span class="pre">Lev</span></code>). <code class="docutils literal"><span class="pre">Mark</span></code> them all using the button
+at the top of the list, and click on <code class="docutils literal"><span class="pre">Download</span></code>.</p>
 </li>
-<li><p class="first">Click on <tt class="docutils literal"><span class="pre">URLS</span> <span class="pre">list</span> <span class="pre">in</span> <span class="pre">a</span> <span class="pre">file</span></tt>, download the list</p>
+<li><p class="first">Click on <code class="docutils literal"><span class="pre">URLS</span> <span class="pre">list</span> <span class="pre">in</span> <span class="pre">a</span> <span class="pre">file</span></code>, download the list</p>
 </li>
 <li><p class="first">Go to your terminal, and launch
-<tt class="docutils literal"><span class="pre">wget</span> <span class="pre">--content-disposition</span> <span class="pre">-i</span> <span class="pre">FILE_NAME</span></tt> (see the webpage for
+<code class="docutils literal"><span class="pre">wget</span> <span class="pre">--content-disposition</span> <span class="pre">-i</span> <span class="pre">FILE_NAME</span></code> (see the webpage for
 details).</p>
 </li>
 </ul>
 </div>
 </div>
-<div class="section" id="in-lsst">
-<h1>In LSST<a class="headerlink" href="#in-lsst" title="Permalink to this headline">¶</a></h1>
 </div>
 
 
@@ -181,10 +191,10 @@ details).</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="sshfs.html" class="btn btn-neutral float-right" title="Mount sps or afs (or any other disks)" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="WeakLensing.html" class="btn btn-neutral float-right" title="Weak lensing" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="WeakLensing.html" class="btn btn-neutral" title="Generality" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral" title="LSST/Desc analyses and info" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -225,7 +235,7 @@ details).</p>
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

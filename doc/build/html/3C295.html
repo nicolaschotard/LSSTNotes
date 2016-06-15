@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Cluster 3C295 &mdash; LSST Doc</title>
+  <title>3C295 &mdash; LSST Doc</title>
   
 
   
@@ -31,8 +31,8 @@
 
   
     <link rel="top" title="LSST Doc" href="index.html"/>
-        <link rel="next" title="Generality" href="WeakLensing.html"/>
-        <link rel="prev" title="LSST personal documentation" href="index.html"/> 
+        <link rel="next" title="Mount sps or afs (or any other disks)" href="sshfs.html"/>
+        <link rel="prev" title="General analysis workflow" href="Workflow.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -80,24 +80,27 @@
           
             
             
-                <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="">Cluster 3C295</a><ul>
+                <p class="caption"><span class="caption-text">Analysis</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Clusters.html">Clusters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="WeakLensing.html">Weak lensing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Workflow.html">General analysis workflow</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Individual clusters</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3C295</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#get-the-data">Get the data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#re-organize-the-data">Re-organize the data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#get-the-astrometry">Get the astrometry</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="WeakLensing.html">Generality</a></li>
-<li class="toctree-l1"><a class="reference internal" href="WeakLensing.html#in-lsst">In LSST</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Clusters.html">Generality</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Clusters.html#in-lsst">In LSST</a></li>
 </ul>
+<p class="caption"><span class="caption-text">Various info</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="sshfs.html">Mount sps or afs (or any other disks)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Install.html">Packages install</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Tests.html">Some examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Links.html">Links</a></li>
-<li class="toctree-l1"><a class="reference internal" href="About.html">About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="TODO.html">Todo</a></li>
 </ul>
 
             
@@ -120,7 +123,7 @@
         <div class="rst-content">
           
 
-
+ 
 
 
 
@@ -128,7 +131,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li>Cluster 3C295</li>
+    <li>3C295</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -142,38 +145,38 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="cluster-3c295">
-<h1>Cluster 3C295<a class="headerlink" href="#cluster-3c295" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="c295">
+<h1>3C295<a class="headerlink" href="#c295" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="get-the-data">
 <h2>Get the data<a class="headerlink" href="#get-the-data" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p class="first">Go online to</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>http://www2.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/search/?collection=CFHT&amp;noexec=true#queryFormTab
+<div class="highlight-default"><div class="highlight"><pre><span></span>http://www2.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/search/?collection=CFHT&amp;noexec=true#queryFormTab
 </pre></div>
 </div>
 </li>
-<li><p class="first">Select your target in <tt class="docutils literal"><span class="pre">Spatial</span> <span class="pre">Constraints</span> <span class="pre">-&gt;</span> <span class="pre">Target</span></tt> (put 3C295),
+<li><p class="first">Select your target in <code class="docutils literal"><span class="pre">Spatial</span> <span class="pre">Constraints</span> <span class="pre">-&gt;</span> <span class="pre">Target</span></code> (put 3C295),
 and then, select below using the following criteria:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>Optical -&gt; CFHT -&gt; MegaPrime -&gt; All -&gt; Calibrated -&gt; Image -&gt; Object
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Optical</span> <span class="o">-&gt;</span> <span class="n">CFHT</span> <span class="o">-&gt;</span> <span class="n">MegaPrime</span> <span class="o">-&gt;</span> <span class="n">All</span> <span class="o">-&gt;</span> <span class="n">Calibrated</span> <span class="o">-&gt;</span> <span class="n">Image</span> <span class="o">-&gt;</span> <span class="n">Object</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Click on the <tt class="docutils literal"><span class="pre">Search</span></tt> buttn. Make sure all exposure have an
-integration time of at least 200s (<tt class="docutils literal"><span class="pre">Int</span> <span class="pre">Time</span></tt> -&gt; <tt class="docutils literal"><span class="pre">&gt;200</span></tt>), and the
-calibration is 2 (<tt class="docutils literal"><span class="pre">Cal.</span> <span class="pre">Lev</span></tt>). <tt class="docutils literal"><span class="pre">Mark</span></tt> them all using the button
-at the top of the list, and click on <tt class="docutils literal"><span class="pre">Download</span></tt>.</p>
+<li><p class="first">Click on the <code class="docutils literal"><span class="pre">Search</span></code> buttn. Make sure all exposure have an
+integration time of at least 200s (<code class="docutils literal"><span class="pre">Int</span> <span class="pre">Time</span></code> -&gt; <code class="docutils literal"><span class="pre">&gt;200</span></code>), and the
+calibration is 2 (<code class="docutils literal"><span class="pre">Cal.</span> <span class="pre">Lev</span></code>). <code class="docutils literal"><span class="pre">Mark</span></code> them all using the button
+at the top of the list, and click on <code class="docutils literal"><span class="pre">Download</span></code>.</p>
 </li>
-<li><p class="first">Click on <tt class="docutils literal"><span class="pre">URLS</span> <span class="pre">list</span> <span class="pre">in</span> <span class="pre">a</span> <span class="pre">file</span></tt>, download the list</p>
+<li><p class="first">Click on <code class="docutils literal"><span class="pre">URLS</span> <span class="pre">list</span> <span class="pre">in</span> <span class="pre">a</span> <span class="pre">file</span></code>, download the list</p>
 </li>
 <li><p class="first">Go to your terminal, and launch
-<tt class="docutils literal"><span class="pre">wget</span> <span class="pre">--content-disposition</span> <span class="pre">-i</span> <span class="pre">FILE_NAME</span></tt> (see the webpage for
+<code class="docutils literal"><span class="pre">wget</span> <span class="pre">--content-disposition</span> <span class="pre">-i</span> <span class="pre">FILE_NAME</span></code> (see the webpage for
 details) in the directory you want to get the file you just
 downloaded.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>cd WORKDIR/3C295
-mkdir CalibratedData
-cd CalibratedData
-mv ~/Download/cadcUrlList.txt .
-wget --content-disposition -i cadcUrlList.txt
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">WORKDIR</span><span class="o">/</span><span class="mi">3</span><span class="n">C295</span>
+<span class="n">mkdir</span> <span class="n">CalibratedData</span>
+<span class="n">cd</span> <span class="n">CalibratedData</span>
+<span class="n">mv</span> <span class="o">~/</span><span class="n">Download</span><span class="o">/</span><span class="n">cadcUrlList</span><span class="o">.</span><span class="n">txt</span> <span class="o">.</span>
+<span class="n">wget</span> <span class="o">--</span><span class="n">content</span><span class="o">-</span><span class="n">disposition</span> <span class="o">-</span><span class="n">i</span> <span class="n">cadcUrlList</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
 </div>
 </li>
@@ -186,9 +189,9 @@ wget --content-disposition -i cadcUrlList.txt
 <h2>Re-organize the data<a class="headerlink" href="#re-organize-the-data" title="Permalink to this headline">¶</a></h2>
 <p>We first need to re-organize the data to get a directory with a
 structure compatible with the LSST stack.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>setup pipe_task
-setup obs_cfht -t chotard
-ingestImages.py input CalibratedData/*.fz --mode link
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">setup</span> <span class="n">pipe_task</span>
+<span class="n">setup</span> <span class="n">obs_cfht</span> <span class="o">-</span><span class="n">t</span> <span class="n">chotard</span>
+<span class="n">ingestImages</span><span class="o">.</span><span class="n">py</span> <span class="nb">input</span> <span class="n">CalibratedData</span><span class="o">/*.</span><span class="n">fz</span> <span class="o">--</span><span class="n">mode</span> <span class="n">link</span>
 </pre></div>
 </div>
 <p>The &#8211;mode link will create links instead of copying file</p>
@@ -198,7 +201,7 @@ ingestImages.py input CalibratedData/*.fz --mode link
 <p>A script available at CC-IN2P3 will help you get the needed astrometry
 files using as input the list of calibrated data downloaded in the first
 step (cadcUrlList.txt). It is for now stored under</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>/sps/lsst/dev/nchotard/scripts/get_astrometry.py
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">sps</span><span class="o">/</span><span class="n">lsst</span><span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">nchotard</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">get_astrometry</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
 </div>
 <p>but will soon ne uploaded on github. Here is in some details what the
@@ -206,22 +209,22 @@ script does.</p>
 <p>The coordinate of the cluster are (RA, DEC) = (212.8355, 52.20277) in
 degree. They also come from CADC. At the moment the most complete
 catalog available is based on SDSS DR9 and is available at IN2P3 in:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>/sps/lsst/data/astrometry_net_data/sdss-dr9 (1440 files)
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">sps</span><span class="o">/</span><span class="n">lsst</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">astrometry_net_data</span><span class="o">/</span><span class="n">sdss</span><span class="o">-</span><span class="n">dr9</span> <span class="p">(</span><span class="mi">1440</span> <span class="n">files</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>To get the specific files that you need for the cluster analysis, you
 will use</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>get-healpix -N8 212.8355 -- 52.20277  # &quot;--&quot; is optional in this case but mandatory for a negative declination value
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">get</span><span class="o">-</span><span class="n">healpix</span> <span class="o">-</span><span class="n">N8</span> <span class="mf">212.8355</span> <span class="o">--</span> <span class="mf">52.20277</span>  <span class="c1"># &quot;--&quot; is optional in this case but mandatory for a negative declination value</span>
 </pre></div>
 </div>
 <p>Which will return</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>(RA, DEC) = (212.835, 52.2028) degrees
-Healpix=157 in the XY scheme (bighp=2, x=3, y=5)
-  healpix=100 in the RING scheme (ringnum=7, longind=16)
-  healpix=167 in the NESTED scheme.
-Healpix center is (212.14286, 48.141208) degrees
-Healpix is bounded by RA=[205.714, 218.571], Dec=[41.8103, 54.3409] degrees.
-Healpix scale is 26384.5 arcsec.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">RA</span><span class="p">,</span> <span class="n">DEC</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="mf">212.835</span><span class="p">,</span> <span class="mf">52.2028</span><span class="p">)</span> <span class="n">degrees</span>
+<span class="n">Healpix</span><span class="o">=</span><span class="mi">157</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">XY</span> <span class="n">scheme</span> <span class="p">(</span><span class="n">bighp</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+  <span class="n">healpix</span><span class="o">=</span><span class="mi">100</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">RING</span> <span class="n">scheme</span> <span class="p">(</span><span class="n">ringnum</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">longind</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+  <span class="n">healpix</span><span class="o">=</span><span class="mi">167</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">NESTED</span> <span class="n">scheme</span><span class="o">.</span>
+<span class="n">Healpix</span> <span class="n">center</span> <span class="ow">is</span> <span class="p">(</span><span class="mf">212.14286</span><span class="p">,</span> <span class="mf">48.141208</span><span class="p">)</span> <span class="n">degrees</span>
+<span class="n">Healpix</span> <span class="ow">is</span> <span class="n">bounded</span> <span class="n">by</span> <span class="n">RA</span><span class="o">=</span><span class="p">[</span><span class="mf">205.714</span><span class="p">,</span> <span class="mf">218.571</span><span class="p">],</span> <span class="n">Dec</span><span class="o">=</span><span class="p">[</span><span class="mf">41.8103</span><span class="p">,</span> <span class="mf">54.3409</span><span class="p">]</span> <span class="n">degrees</span><span class="o">.</span>
+<span class="n">Healpix</span> <span class="n">scale</span> <span class="ow">is</span> <span class="mf">26384.5</span> <span class="n">arcsec</span><span class="o">.</span>
 </pre></div>
 </div>
 <p>This output give you the file number that you need to get (Healpix=157).
@@ -236,10 +239,10 @@ Since each</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="WeakLensing.html" class="btn btn-neutral float-right" title="Generality" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="sshfs.html" class="btn btn-neutral float-right" title="Mount sps or afs (or any other disks)" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral" title="LSST personal documentation" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Workflow.html" class="btn btn-neutral" title="General analysis workflow" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -280,7 +283,7 @@ Since each</p>
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

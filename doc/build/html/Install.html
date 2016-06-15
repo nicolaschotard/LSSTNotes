@@ -30,7 +30,9 @@
   
 
   
-    <link rel="top" title="LSST Doc" href="index.html"/> 
+    <link rel="top" title="LSST Doc" href="index.html"/>
+        <link rel="next" title="Some examples" href="Tests.html"/>
+        <link rel="prev" title="Mount sps or afs (or any other disks)" href="sshfs.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -78,19 +80,25 @@
           
             
             
-                <ul>
-<li class="toctree-l1"><a class="reference internal" href="3C295.html">Cluster 3C295</a></li>
-<li class="toctree-l1"><a class="reference internal" href="WeakLensing.html">Generality</a></li>
-<li class="toctree-l1"><a class="reference internal" href="WeakLensing.html#in-lsst">In LSST</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Clusters.html">Generality</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Clusters.html#in-lsst">In LSST</a></li>
-</ul>
+                <p class="caption"><span class="caption-text">Analysis</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="Clusters.html">Clusters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="WeakLensing.html">Weak lensing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Workflow.html">General analysis workflow</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Individual clusters</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="3C295.html">3C295</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Various info</span></p>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="sshfs.html">Mount sps or afs (or any other disks)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Packages install</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#install-an-alternate-version-of-meas-astrom">Install an alternate version of meas_astrom</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="Tests.html">Some examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Links.html">Links</a></li>
-<li class="toctree-l1"><a class="reference internal" href="About.html">About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="TODO.html">Todo</a></li>
 </ul>
 
             
@@ -113,7 +121,7 @@
         <div class="rst-content">
           
 
-
+ 
 
 
 
@@ -140,19 +148,19 @@
 <div class="section" id="install-an-alternate-version-of-meas-astrom">
 <h2>Install an alternate version of meas_astrom<a class="headerlink" href="#install-an-alternate-version-of-meas-astrom" title="Permalink to this headline">¶</a></h2>
 <p>Clone the repository</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>git clone https://github.com/lsst/meas_astrom.git
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">lsst</span><span class="o">/</span><span class="n">meas_astrom</span><span class="o">.</span><span class="n">git</span>
 </pre></div>
 </div>
 <p>Change branch if needed</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>cd meas_astrom
-git checkout tickets/DM-6525
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">meas_astrom</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="n">tickets</span><span class="o">/</span><span class="n">DM</span><span class="o">-</span><span class="mi">6525</span>
 </pre></div>
 </div>
 <p>Install and set it up correctly</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>setup -k -r .
-scons opt=3
-eups declare -r . -t your_login_name
-setup meas_astrom -t your_login_name
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">setup</span> <span class="o">-</span><span class="n">k</span> <span class="o">-</span><span class="n">r</span> <span class="o">.</span>
+<span class="n">scons</span> <span class="n">opt</span><span class="o">=</span><span class="mi">3</span>
+<span class="n">eups</span> <span class="n">declare</span> <span class="o">-</span><span class="n">r</span> <span class="o">.</span> <span class="o">-</span><span class="n">t</span> <span class="n">your_login_name</span>
+<span class="n">setup</span> <span class="n">meas_astrom</span> <span class="o">-</span><span class="n">t</span> <span class="n">your_login_name</span>
 </pre></div>
 </div>
 </div>
@@ -162,6 +170,15 @@ setup meas_astrom -t your_login_name
            </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Tests.html" class="btn btn-neutral float-right" title="Some examples" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="sshfs.html" class="btn btn-neutral" title="Mount sps or afs (or any other disks)" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
@@ -200,7 +217,7 @@ setup meas_astrom -t your_login_name
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

@@ -1,9 +1,15 @@
 
+Clusters
+========
+
 Generality
-==========
+----------
+
+Cluster analisys in LSST
+------------------------
 
 Get a cluster data
-------------------
+~~~~~~~~~~~~~~~~~~
 
 -  Go online to
 
@@ -28,7 +34,3 @@ Get a cluster data
 -  Go to your terminal, and launch
    ``wget --content-disposition -i FILE_NAME`` (see the webpage for
    details).
-
-In LSST
-=======
-

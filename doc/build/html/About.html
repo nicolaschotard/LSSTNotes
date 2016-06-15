@@ -30,9 +30,7 @@
   
 
   
-    <link rel="top" title="LSST Doc" href="index.html"/>
-        <link rel="next" title="Todo" href="TODO.html"/>
-        <link rel="prev" title="Links" href="Links.html"/> 
+    <link rel="top" title="LSST Doc" href="index.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -80,19 +78,22 @@
           
             
             
-                <ul>
-<li class="toctree-l1"><a class="reference internal" href="3C295.html">Cluster 3C295</a></li>
-<li class="toctree-l1"><a class="reference internal" href="WeakLensing.html">Generality</a></li>
-<li class="toctree-l1"><a class="reference internal" href="WeakLensing.html#in-lsst">In LSST</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Clusters.html">Generality</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Clusters.html#in-lsst">In LSST</a></li>
+                <p class="caption"><span class="caption-text">Analysis</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Clusters.html">Clusters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="WeakLensing.html">Weak lensing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Workflow.html">General analysis workflow</a></li>
 </ul>
-<ul class="current">
+<p class="caption"><span class="caption-text">Individual clusters</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="3C295.html">3C295</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Various info</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="sshfs.html">Mount sps or afs (or any other disks)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Install.html">Packages install</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Tests.html">Some examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Links.html">Links</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="TODO.html">Todo</a></li>
 </ul>
 
             
@@ -115,7 +116,7 @@
         <div class="rst-content">
           
 
-
+ 
 
 
 
@@ -143,21 +144,21 @@
 <li><p class="first">This webpage is for now hosted on my computer !</p>
 </li>
 <li><p class="first">If you want to make modifications, apply corrections, or improve this
-page, you can either work on one of the already existing <tt class="docutils literal"><span class="pre">Jupiter</span></tt>
+page, you can either work on one of the already existing <code class="docutils literal"><span class="pre">Jupiter</span></code>
 notebook (you of course need it to be
 <a class="reference external" href="http://jupyter.org/">installed</a>), which are stored under
-<tt class="docutils literal"><span class="pre">ipynbs</span></tt>, or create a new one. Do not forget to add the notebook
-into the <tt class="docutils literal"><span class="pre">toctree</span></tt> of the <tt class="docutils literal"><span class="pre">doc/source/index.rst</span></tt> file.</p>
+<code class="docutils literal"><span class="pre">ipynbs</span></code>, or create a new one. Do not forget to add the notebook
+into the <code class="docutils literal"><span class="pre">toctree</span></code> of the <code class="docutils literal"><span class="pre">doc/source/index.rst</span></code> file.</p>
 </li>
 <li><p class="first">When you are done with your modifications, build the html web page in
 the tree directory</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>./build_doc.sh
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">build_doc</span><span class="o">.</span><span class="n">sh</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">It will automatically convert all the notebooks into <tt class="docutils literal"><span class="pre">rst</span></tt> files
+<li><p class="first">It will automatically convert all the notebooks into <code class="docutils literal"><span class="pre">rst</span></code> files
 and copy all the new figures that you could have added in the
-<tt class="docutils literal"><span class="pre">ipynbs/figures/</span></tt> directory to the right place.</p>
+<code class="docutils literal"><span class="pre">ipynbs/figures/</span></code> directory to the right place.</p>
 </li>
 <li><p class="first">Open the index.html in your browser, or reload, and make sure that
 everyting is the way it should be.</p>
@@ -169,15 +170,6 @@ everyting is the way it should be.</p>
            </div>
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="TODO.html" class="btn btn-neutral float-right" title="Todo" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="Links.html" class="btn btn-neutral" title="Links" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>
@@ -216,7 +208,7 @@ everyting is the way it should be.</p>
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
