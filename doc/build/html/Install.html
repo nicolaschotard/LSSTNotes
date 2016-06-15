@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Generality &mdash; LSST Doc</title>
+  <title>Packages install &mdash; LSST Doc</title>
   
 
   
@@ -30,9 +30,7 @@
   
 
   
-    <link rel="top" title="LSST Doc" href="index.html"/>
-        <link rel="next" title="Generality" href="Clusters.html"/>
-        <link rel="prev" title="Cluster 3C295" href="3C295.html"/> 
+    <link rel="top" title="LSST Doc" href="index.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -80,10 +78,10 @@
           
             
             
-                <ul class="current">
+                <ul>
 <li class="toctree-l1"><a class="reference internal" href="3C295.html">Cluster 3C295</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Generality</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#in-lsst">In LSST</a></li>
+<li class="toctree-l1"><a class="reference internal" href="WeakLensing.html">Generality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="WeakLensing.html#in-lsst">In LSST</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Clusters.html">Generality</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Clusters.html#in-lsst">In LSST</a></li>
 </ul>
@@ -123,11 +121,11 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li>Generality</li>
+    <li>Packages install</li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="_sources/WeakLensing.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/Install.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -137,26 +135,33 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="generality">
-<h1>Generality<a class="headerlink" href="#generality" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="packages-install">
+<h1>Packages install<a class="headerlink" href="#packages-install" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="install-an-alternate-version-of-meas-astrom">
+<h2>Install an alternate version of meas_astrom<a class="headerlink" href="#install-an-alternate-version-of-meas-astrom" title="Permalink to this headline">¶</a></h2>
+<p>Clone the repository</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>git clone https://github.com/lsst/meas_astrom.git
+</pre></div>
 </div>
-<div class="section" id="in-lsst">
-<h1>In LSST<a class="headerlink" href="#in-lsst" title="Permalink to this headline">¶</a></h1>
+<p>Change branch if needed</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>cd meas_astrom
+git checkout tickets/DM-6525
+</pre></div>
+</div>
+<p>Install and set it up correctly</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>setup -k -r .
+scons opt=3
+eups declare -r . -t your_login_name
+setup meas_astrom -t your_login_name
+</pre></div>
+</div>
+</div>
 </div>
 
 
            </div>
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="Clusters.html" class="btn btn-neutral float-right" title="Generality" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="3C295.html" class="btn btn-neutral" title="Cluster 3C295" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>
