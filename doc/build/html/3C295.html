@@ -92,6 +92,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#get-the-data">Get the data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#re-organize-the-data">Re-organize the data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#get-the-astrometry">Get the astrometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-the-list-of-visit-for-each-filters">Create the list of visit for each filters</a></li>
 </ul>
 </li>
 </ul>
@@ -150,10 +151,8 @@
 <div class="section" id="get-the-data">
 <h2>Get the data<a class="headerlink" href="#get-the-data" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><p class="first">Go online to</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>http://www2.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/search/?collection=CFHT&amp;noexec=true#queryFormTab
-</pre></div>
-</div>
+<li><p class="first">Go online to the <a class="reference external" href="http://www2.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/search/?collection=CFHT&amp;noexec=true#queryFormTab">CADC web
+page</a></p>
 </li>
 <li><p class="first">Select your target in <code class="docutils literal"><span class="pre">Spatial</span> <span class="pre">Constraints</span> <span class="pre">-&gt;</span> <span class="pre">Target</span></code> (put 3C295),
 and then, select below using the following criteria:</p>
@@ -173,9 +172,9 @@ at the top of the list, and click on <code class="docutils literal"><span class=
 details) in the directory you want to get the file you just
 downloaded.</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">WORKDIR</span><span class="o">/</span><span class="mi">3</span><span class="n">C295</span>
-<span class="n">mkdir</span> <span class="n">CalibratedData</span>
-<span class="n">cd</span> <span class="n">CalibratedData</span>
-<span class="n">mv</span> <span class="o">~/</span><span class="n">Download</span><span class="o">/</span><span class="n">cadcUrlList</span><span class="o">.</span><span class="n">txt</span> <span class="o">.</span>
+<span class="n">mkdir</span> <span class="mi">00</span><span class="o">-</span><span class="n">CalibratedData</span>
+<span class="n">cd</span> <span class="mi">00</span><span class="o">-</span><span class="n">CalibratedData</span>
+<span class="c1"># the downloaded cadcUrlList.txt must be in the current directory</span>
 <span class="n">wget</span> <span class="o">--</span><span class="n">content</span><span class="o">-</span><span class="n">disposition</span> <span class="o">-</span><span class="n">i</span> <span class="n">cadcUrlList</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
 </div>
@@ -189,8 +188,12 @@ downloaded.</p>
 <h2>Re-organize the data<a class="headerlink" href="#re-organize-the-data" title="Permalink to this headline">¶</a></h2>
 <p>We first need to re-organize the data to get a directory with a
 structure compatible with the LSST stack.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">setup</span> <span class="n">pipe_task</span>
-<span class="n">setup</span> <span class="n">obs_cfht</span> <span class="o">-</span><span class="n">t</span> <span class="n">chotard</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">WORKDIR</span><span class="o">/</span><span class="mi">3</span><span class="n">C295</span>
+<span class="n">mkdir</span> <span class="nb">input</span>
+<span class="c1"># Declare an instrument mapper for the DM butler</span>
+<span class="n">echo</span> <span class="s1">&#39;lsst.obs.cfht.MegacamMapper&#39;</span> <span class="o">&gt;</span> <span class="nb">input</span><span class="o">/</span><span class="n">_mapper</span>
+<span class="n">setup</span> <span class="n">pipe_tasks</span>
+<span class="n">setup</span> <span class="n">obs_cfht</span> <span class="c1"># -t chotard depending on your install</span>
 <span class="n">ingestImages</span><span class="o">.</span><span class="n">py</span> <span class="nb">input</span> <span class="n">CalibratedData</span><span class="o">/*.</span><span class="n">fz</span> <span class="o">--</span><span class="n">mode</span> <span class="n">link</span>
 </pre></div>
 </div>
@@ -204,8 +207,14 @@ step (cadcUrlList.txt). It is for now stored under</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">sps</span><span class="o">/</span><span class="n">lsst</span><span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">nchotard</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">get_astrometry</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
 </div>
-<p>but will soon ne uploaded on github. Here is in some details what the
-script does.</p>
+<p>but will soon be uploaded on github. To run it, do:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">WORKDIR</span><span class="o">/</span><span class="mi">3</span><span class="n">c295</span>
+<span class="n">mkdir</span> <span class="mi">01</span><span class="o">-</span><span class="n">AstrometryData</span>
+<span class="n">cd</span> <span class="n">AstrometryData</span>
+<span class="n">get_astrometry</span> <span class="n">WORKDIR</span><span class="o">/</span><span class="mi">3</span><span class="n">C295</span><span class="o">/</span><span class="mi">00</span><span class="o">-</span><span class="n">CalibratedData</span><span class="o">/</span><span class="n">cadcUrlList</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>Here is in some details what the script does.</p>
 <p>The coordinate of the cluster are (RA, DEC) = (212.8355, 52.20277) in
 degree. They also come from CADC. At the moment the most complete
 catalog available is based on SDSS DR9 and is available at IN2P3 in:</p>
@@ -229,6 +238,27 @@ will use</p>
 </div>
 <p>This output give you the file number that you need to get (Healpix=157).
 Since each</p>
+</div>
+<div class="section" id="create-the-list-of-visit-for-each-filters">
+<h2>Create the list of visit for each filters<a class="headerlink" href="#create-the-list-of-visit-for-each-filters" title="Permalink to this headline">¶</a></h2>
+<p>To do so, use the <code class="docutils literal"><span class="pre">build_visit_lists.py</span></code> this way</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">build_visit_lists</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">i</span> <span class="o">../</span><span class="nb">input</span>
+</pre></div>
+</div>
+<p>which should output something like</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">INFO</span><span class="p">:</span> <span class="mi">96</span> <span class="n">visists</span> <span class="n">found</span>
+<span class="n">INFO</span><span class="p">:</span> <span class="mi">5</span> <span class="n">filters</span> <span class="n">found</span>
+ <span class="o">-</span> <span class="n">i</span><span class="p">:</span> <span class="mi">20</span> <span class="n">visits</span> <span class="o">-&gt;</span> <span class="n">i</span><span class="o">.</span><span class="n">list</span>
+ <span class="o">-</span> <span class="n">r</span><span class="p">:</span> <span class="mi">21</span> <span class="n">visits</span> <span class="o">-&gt;</span> <span class="n">r</span><span class="o">.</span><span class="n">list</span>
+ <span class="o">-</span> <span class="n">u</span><span class="p">:</span> <span class="mi">25</span> <span class="n">visits</span> <span class="o">-&gt;</span> <span class="n">u</span><span class="o">.</span><span class="n">list</span>
+ <span class="o">-</span> <span class="n">z</span><span class="p">:</span> <span class="mi">13</span> <span class="n">visits</span> <span class="o">-&gt;</span> <span class="n">z</span><span class="o">.</span><span class="n">list</span>
+ <span class="o">-</span> <span class="n">g</span><span class="p">:</span> <span class="mi">17</span> <span class="n">visits</span> <span class="o">-&gt;</span> <span class="n">g</span><span class="o">.</span><span class="n">list</span>
+</pre></div>
+</div>
+<p>Run processCcd for all filter</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">run_processCdd</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">F</span> <span class="n">g</span> <span class="o">-</span><span class="n">m</span> <span class="o">-</span><span class="n">a</span>
+</pre></div>
+</div>
 </div>
 </div>
 
